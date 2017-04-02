@@ -1,0 +1,33 @@
+<a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=http://localhost:4000&response_type=code&client_id=311269878530-bgm4t8csv4865tgv8b84nd17nordnis2.apps.googleusercontent.com">hi</a>
+<md-content layout="row" layout-align="center center" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+      <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33" >
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2><span>The Dalton School</span></h2>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <form name="Form" ng-submit="login()">
+            <md-input-container class="md-block">
+              <label>Username</label>
+              <input type="text" name="email" ng-model="username" placeholder="Username" required=""/>
+              <div ng-messages="Form.email.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please enter your Dalton username.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Password</label>
+              <input type="password" name="password" ng-model="password" placeholder="Password" required="" />
+              <div ng-messages="Form.password.$error" role="alert" multiple="">
+              <div ng-message="required" >Please enter your password.</div>
+              </div>
+            </md-input-container>
+            <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+            <md-button ng-hide="loading" class="md-raised md-primary" type="submit">&nbsp Login &nbsp</md-button>
+            <md-checkbox ng-hide="loading" ng-model="rememberMe" aria-label="Remember me" class="md-primary">
+            Remember me
+          </md-checkbox>
+          </form>
+        </md-card-content>
+      </md-card>
+    </md-content>

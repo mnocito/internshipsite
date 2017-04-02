@@ -1,0 +1,39 @@
+<md-toolbar class="md-hue-2 container" infinite-scroll="myPagingFunction()">
+  <div class="md-toolbar-tools" layout="row" layout-align="space-around center"  >
+    <h2 flex="" md-truncate="" style="margin-left: .5%">Internships and Opportunities!</h2>
+    <md-button class="md-raised" aria-label="View favorited internships" ng-click="goToSaved()">
+      View favorites 
+    </md-button>
+    <md-button class="md-raised" style="margin-right: .5%"aria-label="Logout" ng-click="logout()" >
+      Log out
+    </md-button>
+  </div>
+</md-toolbar>
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+  <div flex-xs="" flex-gt-xs="50" layout="column">
+    <md-card ng-repeat="internship in internships">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{internship.companyType}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>
+          {{internship.description}}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <md-card-icon-actions layout="row" layout-align="end center">
+          <md-button class="md-icon-button" aria-label="Favorite" ng-click="favorite(internship._id)">
+            <md-icon md-font-library="material-icons">favorite</md-icon>
+            <md-tooltip>Favorite this internship</md-tooltip>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Contact Ms. Ott">
+            <md-icon md-font-library="material-icons">send</md-icon>
+            <md-tooltip >Contact Ms. Ott about this internship</md-tooltip>
+          </md-button>
+        </md-card-icon-actions>
+      </md-card-actions>
+    </md-card>
+  </div>
+</md-content>
