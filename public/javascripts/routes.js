@@ -3,11 +3,10 @@ app.run(function($rootScope, $http, $location, authFactory) {
     $rootScope.$on("$locationChangeStart", function(event, next, current) { 
         authFactory.checkAuth()
         	.then(function(res) {
-        		console.log(res.data.authed)
         		if(!res.data.authed) {
         			$location.path("/");
         		} else if($location.$$path == "/") {
-        			$location.path("/dashboard");
+        				$location.path("/dashboard");
         		}
         	})
     });
@@ -24,8 +23,8 @@ app.config(function($routeProvider, $locationProvider) {
 			controller: "dashboardCtrl"
 		})
         .when("/favorites", {
-            templateUrl:"/partials/saved.html",
-            controller: "savedCtrl"
+            templateUrl:"/partials/favorited.html",
+            controller: "favoritedCtrl"
         })
 		.otherwise({templateUrl:"/partials/error.html"})
 })

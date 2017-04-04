@@ -7,8 +7,11 @@ app.controller('loginCtrl', ['$scope', '$rootScope', '$location', 'authFactory',
 			if(res.data.authed) {
 				$scope.loading = false;
 				$location.path("/dashboard")
+			}else{
+				console.log('failed to log')
 			} 
 		}, function(res) {
+		
 			// flash msg (res.errormessage) here
 			console.log("failed to auth")
 		});

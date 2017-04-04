@@ -39,7 +39,6 @@ router.post('/authed', function(req, res, next) {
 	if(!req.session.username) {
 		res.send({authed: false});
 	} else {
-		console.log(req.session.username)
 		res.send({authed: true});
 	}
 });
